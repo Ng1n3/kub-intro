@@ -18,12 +18,8 @@ spec:
         app: test-deply
     spec:
       containers:
-        - image: httpd:alpine3.18
+        - image: httpd:alpine3.19
           name: httpd
           resources: {}
   strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
-status: {}
+    type: Recreate
